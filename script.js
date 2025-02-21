@@ -23,7 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Login functionality
     async function attemptLogin(mentorName, password) {
         try {
-            const response = await fetch(`${MENTORS_URL}?fields=Password,Mentor Name,Short Name,Email,Linkedin,Status Reviewed,Credentials,Preferred Startups`, {
+            // Add timestamp to prevent caching
+            const timestamp = new Date().getTime();
+            const response = await fetch(`${MENTORS_URL}?t=${timestamp}&fields=Password,Mentor Name,Short Name,Email,Linkedin,Status Reviewed,Credentials,Preferred Startups`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${SHEETSON_API_KEY}`,
