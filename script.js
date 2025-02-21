@@ -1,6 +1,6 @@
 // Sheetson Configuration
-const SHEETSON_API_KEY = process.env.SHEETSON_API_KEY;
-const SPREADSHEET_ID = process.env.SPREADSHEET_ID;
+const SHEETSON_API_KEY = "5JpEUrbee6a4LX-E7y65Q_7TbRCYrBP0LXoRwKU8gJeKEcOGaOWbzKaR4bo";
+const SPREADSHEET_ID = "1efDT8_KOfiWDyP_rv8Js2Sp7JGplBCcaEYg8QMQqxps";
 const SHEET_NAME = 'Startups';
 const SHEET_MENTORS = 'Mentors';
 
@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             
             const data = await response.json();
+            
             // Find the mentor
             const foundMentor = data.results.find(m => 
                 m['Mentor Name'] === mentorName && 
@@ -43,8 +44,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!foundMentor) {
                 throw new Error('Invalid credentials. Please check your mentor name and password.');
             }
-            // Check the "Status Reviewed" field
-            if (foundMentor['Status Reviewed'] === 'Reviewed') {
+
+            // Debug: Log the mentor's status
+            console.log('Mentor found:', foundMentor);
+            console.log('Status Reviewed value:', foundMentor['Status Reviewed']);
+            
+            // Check if Status Reviewed exists and is specifically 'Reviewed'
+            if (foundMentor['Status Reviewed'] && 
+                foundMentor['Status Reviewed'].trim() === 'Reviewed') {
                 throw new Error('You have already submitted your startup selections.');
             }
 
