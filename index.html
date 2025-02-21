@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Startup Selection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Mentor Startup Selection</h1>
+        
+        <div id="loginContainer" class="login-container">
+            <h2>Mentor Login</h2>
+            <form id="loginForm">
+                <input type="text" id="mentorName" placeholder="Mentor Name" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <div id="startupsContainer" class="startups-container">
+            <h2>Available Startups</h2>
+            <div id="dataList"></div>
+            <button id="lockButton" class="lock-button">Lock in my favorites</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
