@@ -255,3 +255,86 @@ button:hover {
     text-align: center;
     font-weight: 500;
 }
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .entry {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .heart-button {
+        flex-direction: row;
+        justify-content: center;
+        min-width: auto;
+        width: 100%;
+        margin: 0 0 15px 0;
+        padding: 5px;
+    }
+
+    .heart-button span {
+        margin-left: 10px;
+        font-size: 14px;
+    }
+
+    .startup-materials {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .material-button {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+
+    .floating-button {
+        bottom: 20px;
+        right: 20px;
+        padding: 15px 25px;
+        font-size: 16px;
+        width: calc(100% - 40px);
+        justify-content: center;
+    }
+
+    .startup-details p {
+        word-break: break-word;
+    }
+
+    .entry-content h3 {
+        font-size: 1.1em;
+        word-break: break-word;
+    }
+
+    /* Make links more tappable on mobile */
+    a {
+        padding: 5px 0;
+    }
+}
+
+/* Additional adjustments for very small screens */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .login-container {
+        padding: 15px;
+    }
+
+    input {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+
+    .floating-button::before {
+        font-size: 20px;
+    }
+}
